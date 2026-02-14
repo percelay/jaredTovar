@@ -80,19 +80,15 @@ export default function Home() {
         id="hero"
         className="relative flex min-h-screen items-center justify-center overflow-hidden"
       >
-        {/* Background – gradient overlay on dark industrial feel */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800" />
-        {/* Decorative grid pattern */}
+        {/* Background image */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/landing.jpg')" }}
         />
-        {/* Accent glow */}
-        <div className="absolute -top-40 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-orange-500/10 blur-[120px]" />
+        {/* Dark overlay for text legibility */}
+        <div className="absolute inset-0 bg-slate-950/70" />
+        {/* Subtle gradient vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40" />
 
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-orange-400">
