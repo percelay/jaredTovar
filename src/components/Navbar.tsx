@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -31,11 +32,15 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2">
-            <Zap className="h-7 w-7 text-orange-500" />
-            <span className="text-xl font-bold tracking-wider text-white">
-              UEI
-            </span>
+          <a href="#hero" className="flex items-center">
+            <Image
+              src="/images/logouei.png"
+              alt="UEI Logo"
+              width={120}
+              height={48}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </a>
 
           {/* Desktop links */}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import {
   Zap,
@@ -83,7 +84,7 @@ export default function Home() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/landing.jpg')" }}
+          style={{ backgroundImage: "url('/images/electrician.jpeg')" }}
         />
         {/* Dark overlay for text legibility */}
         <div className="absolute inset-0 bg-slate-950/70" />
@@ -91,12 +92,16 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40" />
 
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-orange-400">
-            United Electrical Installations, INC.
-          </p>
-          <h1 className="mb-6 text-7xl font-black tracking-tight text-white sm:text-8xl lg:text-9xl">
-            UEI
-          </h1>
+          <div className="mb-8 flex justify-center">
+            <Image
+              src="/images/logouei.png"
+              alt="UEI — United Electrical Installations, INC."
+              width={400}
+              height={160}
+              className="h-32 w-auto drop-shadow-2xl sm:h-44 lg:h-56"
+              priority
+            />
+          </div>
           <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
             Industrial electrical expertise backed by 60+ years of combined
             experience. Precision installations, PLC systems, and high-voltage
@@ -391,11 +396,16 @@ export default function Home() {
       <footer className="border-t border-slate-800 bg-slate-950 py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-            <div className="flex items-center gap-2">
-              <Zap className="h-5 w-5 text-orange-500" />
-              <span className="font-bold tracking-wider text-white">UEI</span>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/logouei.png"
+                alt="UEI Logo"
+                width={80}
+                height={32}
+                className="h-8 w-auto object-contain"
+              />
               <span className="text-sm text-slate-500">
-                &mdash; United Electrical Installations, INC.
+                United Electrical Installations, INC.
               </span>
             </div>
             <p className="text-sm text-slate-500">
