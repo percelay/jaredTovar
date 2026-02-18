@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import UEILogo from "@/components/UEILogo";
 import {
   Zap,
   ShieldCheck,
@@ -79,66 +79,59 @@ export default function Home() {
       {/* ========== HERO ========== */}
       <section
         id="hero"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden"
+        className="relative flex min-h-screen items-center overflow-hidden"
       >
-        {/* Background image */}
+        {/* Background image — full bleed, image-right focus */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-right bg-no-repeat"
           style={{ backgroundImage: "url('/images/electrician.jpeg')" }}
         />
-        {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-slate-950/70" />
-        {/* Subtle gradient vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40" />
+        {/* Left-to-right gradient: protects text on left, reveals photo on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/20" />
+        {/* Bottom fade so the section blends into the next */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/60 to-transparent" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-          <div className="mb-8 flex justify-center">
-            <Image
-              src="/images/logouei.png"
-              alt="UEI — United Electrical Installations, INC."
-              width={400}
-              height={160}
-              className="h-32 w-auto drop-shadow-2xl sm:h-44 lg:h-56"
-              priority
-            />
-          </div>
-          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
-            Industrial electrical expertise backed by 60+ years of combined
-            experience. Precision installations, PLC systems, and high-voltage
-            solutions across Oklahoma, Kansas, and beyond.
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href="#services"
-              className="inline-flex items-center gap-2 rounded bg-orange-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25"
-            >
-              Our Services
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="#about"
-              className="inline-flex items-center gap-2 rounded border border-slate-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-slate-200 transition-all hover:border-white hover:text-white"
-            >
-              About Us
-            </a>
-          </div>
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="max-w-xl lg:max-w-2xl">
+            <UEILogo showTagline className="mb-8 h-24 w-auto drop-shadow-2xl sm:h-32 lg:h-40" />
 
-          {/* Trust badges */}
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-6 text-xs font-medium uppercase tracking-widest text-slate-400">
-            <span className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-orange-400" />
-              ISNetworld Member
-            </span>
-            <span className="hidden h-4 w-px bg-slate-600 sm:block" />
-            <span className="flex items-center gap-2">
-              <Award className="h-4 w-4 text-orange-400" />
-              BBB Accredited
-            </span>
-            <span className="hidden h-4 w-px bg-slate-600 sm:block" />
-            <span className="flex items-center gap-2">
-              <HardHat className="h-4 w-4 text-orange-400" />
-              60+ Years Experience
-            </span>
+            <p className="mb-10 text-lg leading-relaxed text-slate-300 sm:text-xl">
+              Industrial electrical expertise backed by 60+ years of combined
+              experience. Precision installations, PLC systems, and high-voltage
+              solutions across Oklahoma, Kansas, and beyond.
+            </p>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#services"
+                className="inline-flex items-center gap-2 rounded bg-orange-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30"
+              >
+                Our Services
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#about"
+                className="inline-flex items-center gap-2 rounded border border-slate-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-slate-200 transition-all hover:border-white hover:text-white"
+              >
+                About Us
+              </a>
+            </div>
+
+            {/* Trust badges */}
+            <div className="mt-12 flex flex-wrap gap-6 text-xs font-medium uppercase tracking-widest text-slate-400">
+              <span className="flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4 text-orange-400" />
+                ISNetworld Member
+              </span>
+              <span className="flex items-center gap-2">
+                <Award className="h-4 w-4 text-orange-400" />
+                BBB Accredited
+              </span>
+              <span className="flex items-center gap-2">
+                <HardHat className="h-4 w-4 text-orange-400" />
+                60+ Years Experience
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -397,13 +390,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <div className="flex items-center gap-3">
-              <Image
-                src="/images/logouei.png"
-                alt="UEI Logo"
-                width={80}
-                height={32}
-                className="h-8 w-auto object-contain"
-              />
+              <UEILogo showTagline={false} className="h-7 w-auto" />
               <span className="text-sm text-slate-500">
                 United Electrical Installations, INC.
               </span>
