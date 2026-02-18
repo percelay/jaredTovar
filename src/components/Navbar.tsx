@@ -36,8 +36,8 @@ export default function Navbar() {
             <Image
               src="/images/logouei.png"
               alt="UEI Logo"
-              width={120}
-              height={48}
+              width={400}
+              height={160}
               className="h-10 w-auto object-contain"
               priority
             />
